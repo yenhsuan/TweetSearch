@@ -1,0 +1,22 @@
+{
+  "name": "tweetsearch-server",
+  "version": "1.0.0",
+  "description": "A web server for fetching tweets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "standard && node TwitterServer.js"
+  },
+  "author": "Yen-Hsuan Chen (Terry)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.4",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "twit": "^2.2.10"
+  }
+}
