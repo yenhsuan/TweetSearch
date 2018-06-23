@@ -39,6 +39,13 @@ module.exports = {
         ]
       },
       {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+        exclude: [
+          path.join(__dirname, './node_modules')
+        ]
+      },
+      {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
         loader: 'file-loader?name=img/[name].[ext]'
       }
