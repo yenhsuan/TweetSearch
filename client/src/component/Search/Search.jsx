@@ -62,7 +62,7 @@ class Search extends Component {
     const num = this.props.appStates.tweetsCount
     this.props.appStates.isSearching = true
     this.props.appStates.tweets = []
-    axios.post('http://localhost:3000/api/v1/search', {
+    axios.post('/api/v1/search', {
       query: q,
       count: num
     })

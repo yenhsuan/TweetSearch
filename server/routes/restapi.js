@@ -18,7 +18,7 @@ router.post('/search', jsonParser, (req, res) => {
 
   twitter.get('search/tweets', { q: query, count: num }, (err, data, response) => {
     if (err) {
-      console.err(err)
+      console.log(err)
       const ret = {
         'error': true,
         'message': err
