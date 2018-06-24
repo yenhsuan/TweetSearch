@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "standard && node TwitterServer.js"
+    "start": "standard && node TwitterServer.js",
+    "build": "standard"
   },
   "author": "Yen-Hsuan Chen (Terry)",
   "license": "ISC",
