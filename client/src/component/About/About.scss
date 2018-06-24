@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Varela+Round');
+$color-darkblue: #005b96;
+
+.about-container {
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  margin: 0 auto;
+  width:80%;
+  @media (max-width: 720px) {
+    span {
+      display: none;
+    }
+  }
+}
+
+.about-heading {
+  display: block;
+  font-weight: 300;
+  font-size: 3rem;
+  font-family: 'Varela Round', sans-serif;
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.about-sub-heading {
+  display: block;
+  font-weight: 500;
+  font-size: 3.5rem;
+  font-family: 'Pacifico', 'Open Sans';
+  color: $color-darkblue;
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.about-copy-right {
+  margin-top: 2rem;
+  display: block;
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(5rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}

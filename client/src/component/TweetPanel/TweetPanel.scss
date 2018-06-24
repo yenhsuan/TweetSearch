@@ -1,0 +1,42 @@
+$color-white: #f2f2f2;
+$color-blue: #63ace5;
+
+.not-found-message {
+  font-family: 'Pacifico', 'Open Sans';
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6rem;
+  border: .5rem solid $color-blue;
+  border-radius: 6rem;
+  height: 6rem;
+  margin: -3rem 0 0 -3rem;
+  opacity: 0;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  @media (max-width: 720px) {
+    top: 90%;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(.1);
+    opacity: 0.0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+

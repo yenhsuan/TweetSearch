@@ -2,16 +2,49 @@ $color-lightblue: #63ace5;
 $color-blue: #0084b4;
 $color-darkblue: #005b96;
 $color-grayblue: #0084b4;
+$color-lightgreen: #52bf90;
+$color-green: #419873;
 $color-darkyellow: #FBBC05;
 
 .search-panel {
   margin: 0 auto;
   width: 80%;
-  padding: 3rem;
+  padding: 1rem 3rem 3rem 3rem;
+  @media (max-width: 960px) {
+    width: 100%;
+  }
+
+  &-banner {
+    display: block;
+    margin: 0 0 3rem 0;
+    
+    img {
+      width: 60%;
+      margin: 0 auto;
+      display: block;
+      border-radius: 3rem;
+      @media (max-width: 80rem) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-settings {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (max-width: 720px) {
+      display: block;
+    }
+  }
 
   &-tags-area {
     margin-top: 2rem;
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 5rem;
   }
 
   &-select {
@@ -19,6 +52,12 @@ $color-darkyellow: #FBBC05;
     padding: .5rem .5rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    @media (max-width: 720px) {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 2rem !important;
+    }
 
     li {
       display: inline;
@@ -26,7 +65,19 @@ $color-darkyellow: #FBBC05;
       color: white;
       background-color: $color-lightblue;
       transition: 0.3s;
+      @media (max-width: 720px) {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 60%;
+      }
 
+      @media (max-width: 480px) {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+      }
       &:hover {
         background-color: $color-grayblue;
         cursor: pointer;
@@ -35,16 +86,25 @@ $color-darkyellow: #FBBC05;
 
     &-left-li {
       border-radius: .5rem 0 0 .5rem;
+      @media (max-width: 720px) {
+        border-radius: 0;
+      }
     }
     
     &-right-li {
       border-radius: 0 .5rem .5rem 0;
+      @media (max-width: 720px) {
+        border-radius: 0;
+      }
       &:hover {
         background-color: $color-lightblue !important;
       }
     } 
   }
 
+  a {
+    text-decoration: none !important;
+  }
   &-btn {
     display: inline-block;
     padding: .5rem .5rem;
@@ -64,6 +124,20 @@ $color-darkyellow: #FBBC05;
       background-color: $color-darkblue;
       opacity: 0.75;
       border-radius: 50%;
+      @media (max-width: 720px) {
+        border-radius: 0;
+        display: block;
+        margin: 2rem auto;
+        text-align: center;
+        width: 60%
+      }
+
+      @media (max-width: 480px) {
+        display: block;
+        width: 100%;
+        margin: 2rem auto;
+        text-align: center;
+      }
     }
 
     &-add:active, &-add:focus {
@@ -71,16 +145,32 @@ $color-darkyellow: #FBBC05;
       opacity: 1;
     }
 
+    
+
     &-search {
       color: white;
       padding: .55rem 1rem;
-      background-color: $color-lightblue;
+      background-color: $color-lightgreen;
       // float: right;
       margin-left: 1rem;
-      border-radius: 1.2rem;
-      
+      border-radius: .6rem;
+
+      @media (max-width: 720px) {
+        display: block;
+        margin: 2rem auto;
+        text-align: center;
+        width: 60%
+      }
+
+      @media (max-width: 480px) {
+        display: block;
+        width: 100%;
+        margin: 2rem auto;
+        text-align: center;
+      }
+
       &:hover {
-        background-color: $color-darkblue;
+        background-color: $color-green;
       }
     }
   }
@@ -90,6 +180,23 @@ $color-darkyellow: #FBBC05;
   padding: .8rem 1rem;
   border-radius: 1.5rem;
   vertical-align: top;
+  @media (max-width: 720px) {
+    display: block;
+    margin: 2rem auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 60%
+  }
+
+  @media (max-width: 480px) {
+    display: block;
+    margin: 2rem auto;
+    text-align: center;
+    width: 100%
+  }
+
 }
 
 .material-icons {

@@ -7,7 +7,12 @@
   color: #333;
   background-color: #b3cde0;
   border-radius: 2rem;
-
+  @media (max-width: 720px) {
+    font-size: 1.6rem;
+    .material-icons {
+      font-size: 2rem;
+    }
+  }
   &-btn {
     cursor: pointer;
   }

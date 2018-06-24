@@ -8,6 +8,7 @@ export default class AppState {
   @observable hashtags
   @observable tweetsCount = 10
   @observable isSearching = false
+  @observable sortBy = 'time'
 
   constructor () {
     this.test = 'test message'

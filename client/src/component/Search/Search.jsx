@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
+import { Link, withRouter } from 'react-router-dom'
 import { observer, inject } from 'mobx-react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 import AppState from '../../store/AppState'
-
 import Tag from '../Tag/Tag'
+import SortButtonGroup from '../SortButtonGroup/SortButtonGroup'
+import Comparator from '../../common/comparator'
+
+import banner from '../../../public/img/banner.png'
 import './Search.scss'
 
-@inject('appStates') @observer
+@withRouter @inject('appStates') @observer
 class Search extends Component {
   constructor (props) {
     super(props)
@@ -15,10 +19,8 @@ class Search extends Component {
   }
 
   tagMapper = () => {
-    console.log('mapper')
     return (
       this.props.appStates.hashtags.map((n) => {
-        console.log('sda')
         return (
           <Tag key={n} str={n} />
         )
@@ -31,9 +33,14 @@ class Search extends Component {
       return
     }
 
+    if (this.props.appStates.inputTagValues.charAt(0) !== '#') {
+      this.props.appStates.inputTagValues = '#' + this.props.appStates.inputTagValues
+    }
+
     const idx = this.props.appStates.hashtags.indexOf(this.props.appStates.inputTagValues)
-    console.log(idx)
     if (idx !== -1) {
+      this.props.appStates.inputTagValues = ''
+      this.inputRef.current.value = ''
       return
     }
     this.props.appStates.hashtags.push(this.props.appStates.inputTagValues)
@@ -51,33 +58,53 @@ class Search extends Component {
   }
 
   searchHandler = () => {
-    const q = this.props.appStates.hashtags.join(' ')
+    const q = this.props.appStates.hashtags.join(' OR ')
     const num = this.props.appStates.tweetsCount
-    this.props.appStates.isSearching = false
+    this.props.appStates.isSearching = true
+    this.props.appStates.tweets = []
     axios.post('http://localhost:3000/api/v1/search', {
       query: q,
       count: num
     })
       .then((res) => {
-        this.props.appStates.isSearching = false
         if (res.status !== 200) {
           console.log('Error in fectching data from server')
+          this.props.appStates.isSearching = false
           return
         }
-        console.log(res)
+
         res.data.statuses.forEach((data) => {
-          this.props.appStates.tweets = data
+          this.props.appStates.tweets.push(data)
         })
+        console.log(res)
+        if (this.props.appStates.sortBy === 'time') {
+          this.props.appStates.tweets.replace(
+            this.props.appStates.tweets.slice().sort(Comparator.timeComparator)
+          )
+        } else if (this.props.appStates.sortBy === 'fav') {
+          this.props.appStates.tweets.replace(
+            this.props.appStates.tweets.slice().sort(Comparator.favComparator)
+          )
+        } else if (this.props.appStates.sortBy === 'retweet') {
+          this.props.appStates.tweets.replace(
+            this.props.appStates.tweets.slice().sort(Comparator.retweetComparator)
+          )
+        }
+        this.props.appStates.isSearching = false
       })
       .catch((error) => {
         console.log(error)
+        this.props.appStates.isSearching = false
       })
   }
 
   render () {
     return (
       <div className='search-panel'>
-        <div>
+        <div className='search-panel-banner'>
+          <img src={banner} />
+        </div>
+        <div className='search-panel-settings'>
           <input
             type='text'
             id='keyword'
@@ -125,9 +152,11 @@ class Search extends Component {
 
             <li className='search-panel-select-right-li'> Tweets</li>
           </ul>
-          <a className='search-panel-btn search-panel-btn-search' onClick={() => this.searchHandler()}>
-            Search
-          </a>
+
+          <Link to='/result' onClick={() => this.searchHandler()}>
+            <span className='search-panel-btn search-panel-btn-search'>Search</span>
+          </Link>
+          <SortButtonGroup />
         </div>
         <div className='search-panel-tags-area'>
           {this.tagMapper()}

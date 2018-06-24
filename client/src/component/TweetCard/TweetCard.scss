@@ -1,0 +1,119 @@
+$color-blue: #0084b4;
+$color-lightblue: #63ace5;
+
+.tweet-card {
+  
+  &-container {
+    width: 70rem;
+    display: flex;
+    flex-flow: row nowrap;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: hsla(0, 0, 0, .2) 0 .3rem .2rem -0.2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    margin: 2.5rem auto;
+    @media (max-width: 720px) {
+      width: 95%;
+      margin: 1rem auto;
+    }
+  }
+
+  &-img {
+    flex-grow: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    vertical-align: top;
+    border-radius: 1rem;
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &-body {
+    flex-grow: 1;
+    &-title {
+      margin-bottom: 1rem;
+      @media (max-width: 720px) {
+        span {
+          display: block;
+          margin-left: 0;
+          float: none;
+        }
+      }
+
+      &-name {
+        font-weight: 700;
+      }
+
+      &-id {
+        margin-left: 1.5rem;
+        color: $color-blue;
+        font-size: 1.4rem;
+        a, a:visited, a:focus, a:active {
+          color: $color-blue;
+          text-decoration: none;
+        }
+      }
+
+      &-time {
+        float: right;
+        font-size: 1.2rem;
+        color: #aaa;
+      }
+    }
+
+    &-content {
+      margin-bottom: 1rem;
+      font-size: 0.9em;
+      font-weight: 300;
+      word-break: break-all;
+      a, a:visited, a:focus, a:active {
+        color: $color-blue;
+        text-decoration: none;
+      }
+
+      span {
+        color: $color-blue;
+      }
+    }
+
+    &-footer {
+      float: right;
+      color: #555;
+      span {
+        vertical-align: top;
+        font-size: 1.5rem !important;
+        margin-left: 1.2rem;
+      }
+    }
+
+    &-hashtag {
+      margin-bottom: 1rem;
+      &-tags {
+        display: inline-block;
+        font-size: 1.2rem;
+        background-color: $color-blue;
+        padding: .2rem .6rem .2rem .6rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        color: white;
+        font-weight: 300;
+      }
+    }
+  }
+
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(5rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}

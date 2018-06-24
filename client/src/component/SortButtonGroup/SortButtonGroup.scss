@@ -1,0 +1,39 @@
+$color-pink: #e10975;
+$color-gray: #999;
+$color-darkgray: #555;
+
+.sort {
+  @media (max-width: 720px) {
+    display: block;
+    text-align: center;
+    align-items: center;
+  }
+}
+.sort-btn {
+  display: inline-block;
+  padding: .5rem .5rem;
+  border: none;
+  border-radius: 50%;
+  transition: 0.3s;
+  vertical-align: top;
+  color: white;
+  background-color: $color-gray;
+  margin-left: 1rem;
+  @media (max-width: 720px) {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-darkgray;
+    opacity: 1;
+  }
+}
+
+.sort-btn-active {
+  background-color: $color-pink;
+  &:hover {
+    background-color: $color-pink;
+  }
+}
