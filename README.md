@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/yenhsuan/TweetSearch.svg?branch=master)](https://travis-ci.org/yenhsuan/TweetSearch) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A tweets search application built by React.js and Node.js
-[See Live DEMO](http://yenhsuan.xyz "Live DEMO")
+[See Live DEMO](http://yenhsuan.xyz:3333 "Live DEMO")
 ![](https://i.imgur.com/UbDmGkP.png)
 ## Getting Started
 
@@ -71,7 +71,7 @@ npm start
 ## Deployment
 
 This project is deployed by [PM2](https://www.npmjs.com/package/pm2 "PM2"), and running on a Ubuntu 16.04 machine.
-See Live Demo: https://yenhsuan.xyz:3333
+[See Live DEMO](http://yenhsuan.xyz:3333 "Live DEMO")
 
 ## Built With
 * [React.js](https://www.npmjs.com/package/react "React.js") - JavaScript web framework
