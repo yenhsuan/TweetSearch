@@ -3,20 +3,20 @@
 
 A single page application for tweets search built by React.js and Node.js
 [See Live DEMO](http://yenhsuan.xyz "Live DEMO")
-![](https://i.imgur.com/eWxZDtm.png)
+![](https://i.imgur.com/UbDmGkP.png)
 ## Getting Started
 
-Get copy of this projects
+Get a copy of this project
 ```
 git clone https://github.com/yenhsuan/TweetSearch.git
 ```
 
 ### Prerequisites
 
-[Node.js](https://nodejs.org/en/download/ "Node.js") and [NPM](https://www.npmjs.com/get-npm "NPM") is require.
-Inorder to use Twitter API, you must have an API token/secret (get it [here](https://developer.twitter.com/en/apply-for-access "here")).
+[Node.js](https://nodejs.org/en/download/ "Node.js") and [NPM](https://www.npmjs.com/get-npm "NPM") is required.
+Inorder to use Twitter API, you must have API token and secret (get them [here](https://developer.twitter.com/en/apply-for-access "here")).
 
-This project followed by [Standard.js](https://standardjs.com "Standard.js"), and I highly recommend this library.
+This project followed by [Standard.js](https://standardjs.com "Standard.js"). I highly recommend this library.
 ```
 npm install standard -g
 ```
@@ -29,7 +29,7 @@ Install all necessary libraries
 cd ./client && npm install
 ```
 
-You can test the application by lauching development web server
+You can test the client application by lauching development web server
 ```
 npm start
 ```
@@ -63,7 +63,7 @@ module.exports = {
 }
 ```
 
-Run and Test Server
+Launch Server
 ```
 npm start
 ```
