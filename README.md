@@ -1,7 +1,7 @@
 # Tweet Search
 [![Build Status](https://travis-ci.org/yenhsuan/TweetSearch.svg?branch=master)](https://travis-ci.org/yenhsuan/TweetSearch) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-A single page application for tweets search built by React.js and Node.js
+A tweets search application built by React.js and Node.js
 [See Live DEMO](http://yenhsuan.xyz "Live DEMO")
 ![](https://i.imgur.com/UbDmGkP.png)
 ## Getting Started
@@ -13,8 +13,8 @@ git clone https://github.com/yenhsuan/TweetSearch.git
 
 ### Prerequisites
 
-[Node.js](https://nodejs.org/en/download/ "Node.js") and [NPM](https://www.npmjs.com/get-npm "NPM") is required.
-Inorder to use Twitter API, you must have API token and secret (get them [here](https://developer.twitter.com/en/apply-for-access "here")).
+[Node.js](https://nodejs.org/en/download/ "Node.js") and [NPM](https://www.npmjs.com/get-npm "NPM") are required.
+Inorder to use Twitter API, you must have API token and secret (Get them [here](https://developer.twitter.com/en/apply-for-access "here")).
 
 This project followed by [Standard.js](https://standardjs.com "Standard.js"). I highly recommend this library.
 ```
@@ -29,12 +29,12 @@ Install all necessary libraries
 cd ./client && npm install
 ```
 
-You can test the client application by lauching development web server
+You can test client application by launching development web server
 ```
 npm start
 ```
 
-Build and output static files
+Bundle and output static files
 ```
 npm run build
 ```
@@ -70,7 +70,7 @@ npm start
 
 ## Deployment
 
-This project has been deployed by using [PM2](https://www.npmjs.com/package/pm2 "PM2"), and running on a Ubuntu 16.04 machine.
+This project is deployed by [PM2](https://www.npmjs.com/package/pm2 "PM2"), and running on a Ubuntu 16.04 machine.
 See Live Demo: https://yenhsuan.xyz:3333
 
 ## Built With
